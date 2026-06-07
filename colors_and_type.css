@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap');
+
+/* ============================================================================
+   Moo Sviit — Colors & Type foundations
+   Nordic luxury for a Saaremaa sauna-house brand. Dark juniper-night base mixed
+   with warm limestone light, one ember (leil) accent, juniper green secondary.
+   Glassmorphism, nature photography, elegant serif display + clean grotesk body.
+
+   Fonts are loaded per-page from Google Fonts:
+     Cormorant Garamond  (display serif — headlines, wordmark)
+     Hanken Grotesk      (body / UI sans)
+   ============================================================================ */
+
+:root {
+  /* ---- Font families -------------------------------------------------- */
+  --font-display: "Cormorant Garamond", "Hanken Grotesk", Georgia, serif;
+  --font-body:    "Hanken Grotesk", system-ui, -apple-system, sans-serif;
+
+  /* ---- Dark base — juniper / Baltic dusk ------------------------------ */
+  --night:        #15211d; /* primary dark canvas (kadakas öö)             */
+  --night-2:      #1c2b26; /* raised dark panel                            */
+  --night-3:      #243630; /* hover / card on dark                         */
+  --night-deep:   #0f1815; /* footer / deepest void                        */
+
+  /* ---- Light base — Saaremaa limestone (paas) ------------------------ */
+  --bone:         #efe9dd; /* primary light canvas                         */
+  --bone-2:       #f6f1e8; /* card / raised light                          */
+  --bone-3:       #e6dfd0; /* sunken light / inputs                        */
+
+  /* ---- Accent — leil ember (sauna heat / cedar) ---------------------- */
+  --ember:        #bf6b3c; /* primary accent + CTA                         */
+  --ember-soft:   #d68a5e; /* accent on dark where ember is too dim        */
+  --ember-deep:   #9f5530; /* pressed / hover-dark                         */
+
+  /* ---- Secondary nature tones ---------------------------------------- */
+  --juniper:      #5f7256; /* secondary green (tags, accents)              */
+  --juniper-dim:  #45533f;
+  --sea:          #335b66; /* rare tertiary (Baltic blue)                  */
+
+  /* ---- Text ----------------------------------------------------------- */
+  --ink:          #18221f; /* text on light                                */
+  --ink-soft:     #4f5650; /* secondary text on light                      */
+  --ink-faint:    #7c8278; /* captions / legal on light                    */
+  --on-dark:      #efe9dd; /* text on dark (warm white)                    */
+  --on-dark-soft: #b3bbb0; /* secondary text on dark (sage)                */
+  --on-dark-faint:#7e887d; /* captions on dark                             */
+  --on-ember:     #fbf4ea; /* text on ember buttons                        */
+
+  /* ---- Hairlines ------------------------------------------------------ */
+  --line-dark:    rgba(239, 233, 221, 0.14); /* hairline on dark           */
+  --line-light:   rgba(24, 34, 31, 0.12);    /* hairline on light          */
+
+  /* ---- Glass (glassmorphism) ----------------------------------------- */
+  --glass-dark:   rgba(28, 43, 38, 0.55);
+  --glass-light:  rgba(246, 241, 232, 0.62);
+  --glass-blur:   saturate(140%) blur(18px); /* @kind other */
+  --glass-line:   rgba(239, 233, 221, 0.18);
+
+  /* ---- Shadows -------------------------------------------------------- */
+  --shadow-sm:   0 1px 2px rgba(15, 24, 21, 0.06);
+  --shadow-md:   0 8px 30px rgba(15, 24, 21, 0.12);
+  --shadow-lg:   0 24px 70px rgba(15, 24, 21, 0.30);
+  --shadow-glass:0 12px 40px rgba(0, 0, 0, 0.28);
+
+  /* ---- Radius --------------------------------------------------------- */
+  --r-xs:   6px;
+  --r-sm:   10px;
+  --r-md:   16px;
+  --r-lg:   24px;
+  --r-xl:   32px;
+  --r-pill: 9999px;
+  --r-circle: 50%;
+
+  /* ---- Spacing (base 8) ---------------------------------------------- */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px; --s-5: 24px;
+  --s-6: 32px; --s-7: 48px; --s-8: 64px; --s-9: 96px; --s-10: 128px;
+
+  /* ---- Motion --------------------------------------------------------- */
+  --ease:      cubic-bezier(0.22, 1, 0.36, 1);   /* @kind other */
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);     /* @kind other */
+  --dur:       0.5s;                             /* @kind other */
+}
+
+/* ============================================================================
+   TYPE — display serif is airy & high-contrast; body grotesk is clean.
+   Headlines lean on size + light weight, not boldness (Nordic restraint).
+   ============================================================================ */
+
+.t-hero   { font-family: var(--font-display); font-weight: 500; font-size: clamp(56px, 9vw, 132px); line-height: 0.96; letter-spacing: -0.01em; }
+.t-h1     { font-family: var(--font-display); font-weight: 500; font-size: clamp(40px, 5.2vw, 76px); line-height: 1.02; letter-spacing: -0.01em; }
+.t-h2     { font-family: var(--font-display); font-weight: 500; font-size: clamp(32px, 3.6vw, 52px); line-height: 1.06; letter-spacing: -0.005em; }
+.t-h3     { font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 2.4vw, 34px); line-height: 1.1; }
+.t-lead   { font-family: var(--font-body); font-weight: 400; font-size: clamp(18px, 1.5vw, 22px); line-height: 1.5; letter-spacing: 0.005em; }
+.t-body   { font-family: var(--font-body); font-weight: 400; font-size: 17px; line-height: 1.62; letter-spacing: 0.005em; }
+.t-body-sm{ font-family: var(--font-body); font-weight: 400; font-size: 15px; line-height: 1.55; }
+.t-label  { font-family: var(--font-body); font-weight: 600; font-size: 12px; line-height: 1; letter-spacing: 0.18em; text-transform: uppercase; }
+.t-eyebrow{ font-family: var(--font-body); font-weight: 500; font-size: 13px; line-height: 1; letter-spacing: 0.22em; text-transform: uppercase; }
+.t-caption{ font-family: var(--font-body); font-weight: 400; font-size: 13px; line-height: 1.45; }
+.t-mono   { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 13px; letter-spacing: 0; }
+
+/* Italic display flourish — for accenting one word in a serif headline. */
+.t-italic { font-style: italic; font-weight: 500; }
+
+/* ---- Semantic opt-in: add class="ms" to a container --------------------- */
+.ms { font-family: var(--font-body); color: var(--ink); }
+.ms h1 { font-family: var(--font-display); font-weight: 500; letter-spacing: -0.01em; line-height: 1.02; margin: 0; }
+.ms h2 { font-family: var(--font-display); font-weight: 500; letter-spacing: -0.005em; line-height: 1.06; margin: 0; }
+.ms h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.1; margin: 0; }
+.ms p  { font-family: var(--font-body); font-size: 17px; line-height: 1.62; margin: 0; }
+.ms a  { color: var(--ember); text-decoration: none; }
